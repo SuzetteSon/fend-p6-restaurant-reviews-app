@@ -22,7 +22,7 @@ initMap = () => {
         scrollWheelZoom: false
       });
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
-        mapboxToken: '<your MAPBOX API KEY HERE>',
+        mapboxToken: 'pk.eyJ1Ijoic3V6ZXR0ZXN1bnNoaW5lIiwiYSI6ImNqam9iY2oxdjI3MzgzcG56cTI0M2NkeXEifQ.rw-yf5e28WnkVLZdolHKQw',
         maxZoom: 18,
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
           '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -148,20 +148,39 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = (review) => {
   const li = document.createElement('li');
+  // set id attribute to list item
+  li.setAttribute("id", "list-item");
+  //create new div container for name and date
+  const nameAndDateBox = document.createElement('div');
+  //set id element of container box
+  nameAndDateBox.setAttribute("id", "date-name-container");
+
   const name = document.createElement('p');
   name.innerHTML = review.name;
-  li.appendChild(name);
+  //set id attrinite to name
+  name.setAttribute("id","list-item-name");
 
   const date = document.createElement('p');
   date.innerHTML = review.date;
-  li.appendChild(date);
+  //set id attribute to date
+  date.setAttribute("id", "list-item-date");
+  //li.appendChild(date);
+
+  //add name and date to nameAndDateBox container
+  nameAndDateBox.appendChild(name);
+  nameAndDateBox.appendChild(date);
+  //append container to <li>
+  li.appendChild(nameAndDateBox);
 
   const rating = document.createElement('p');
   rating.innerHTML = `Rating: ${review.rating}`;
+  //set id attribute to rating
+  rating.setAttribute("id", "list-item-rating");
   li.appendChild(rating);
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
+  comments.setAttribute("id", "list-item-comments");
   li.appendChild(comments);
 
   return li;
@@ -174,6 +193,8 @@ fillBreadcrumb = (restaurant=self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
+  //add id to li element
+  li.setAttribute("id", "breadcrumb_item")
   breadcrumb.appendChild(li);
 }
 

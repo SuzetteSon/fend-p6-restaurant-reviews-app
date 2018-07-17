@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
+
 body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10pt;
@@ -76,7 +77,11 @@ nav h1 a {
 
 /* Display list items side by side */
 #breadcrumb li {
-    display: inline;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 24px;
+
 }
 
 /* Add a slash symbol (/) before/behind each list item */
@@ -258,12 +263,12 @@ nav h1 a {
 }
 #reviews-list li {
   background-color: #fff;
-    border: 2px solid #f3f3f3;
+  border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
   margin: 0 0 30px;
   overflow: hidden;
-  padding: 0 20px 20px;
+  /*padding: 0 20px 20px;*/
   position: relative;
   width: 85%;
 }
@@ -273,3 +278,122 @@ nav h1 a {
 #restaurant-hours td {
   color: #666;
 }
+/* ====================== Review list styling ====================== */
+
+#date-name-container {
+    background-color: #333;
+    margin: 0 0 20px;
+    padding: 2px 0;
+    border-radius: 50px 0 0 0;
+    clear: both;
+}
+#list-item {
+      border-radius: 50px 0 50px 0;
+}
+#date-name-container p {
+  color: white;
+}
+/*#list-item-date {
+  float: right;
+}
+#list-item-name {
+  float: left;
+}*/
+#list-item-rating {
+  background-color: #f58500;
+  border-radius: 5px;
+  padding: 5px;
+  padding-left: 15px;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 10px;
+}
+#list-item div,
+#list-item p {
+  padding: 30px;
+}
+
+/* ====================== Footer styling ====================== */
+
+.inside #footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  font-size: 18px;
+}
+
+/* ====================== Responsiveness ====================== */
+
+#maincontent{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+/* to make images responsive */
+img {
+  max-width: 100%;
+}
+/* touch targets */
+a {
+  min-width: 48px;
+  min-height: 48px;
+}
+
+@media screen and (min-width: 320px) {
+  nav h1 a {
+    font-size: 34px;
+  }
+  nav h1 {
+    padding: 30px;
+  }
+  nav {
+    height: 130px;
+  }
+
+  #breadcrumb {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    line-height: 24px;
+    padding: 24px;
+
+  }
+  #breadcrumb_item {
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+    font-size: 20px;
+  }
+
+  .inside #maincontent {
+    width: 100%;
+  }
+  .inside #map-container {
+    width: 100%;
+    order: 0;
+    height: 400px;
+    top: 210px;    
+    position: absolute;
+  }
+  .inside #restaurant-container {
+    width: 100%;
+    order: 1;
+    top: 500px;
+    position: relative;
+  }
+  #reviews-container {
+    width: 100%;
+    order: 2;
+    top: 480px;
+    position: relative;
+  }
+}
+
+@media  screen and (min-width: 850px) {
+  body,
+  .inside header,
+  .inside header ul,
+  .inside #footer {
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+  }
