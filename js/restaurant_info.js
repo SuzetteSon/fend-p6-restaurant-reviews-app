@@ -168,7 +168,7 @@ createReviewHTML = (review) => {
 
   //add name and date to nameAndDateBox container
   nameAndDateBox.appendChild(name);
-  nameAndDateBox.appendChild(date);
+  nameAndDateBox.append(date);
   //append container to <li>
   li.appendChild(nameAndDateBox);
 
