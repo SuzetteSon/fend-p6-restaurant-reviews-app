@@ -360,6 +360,7 @@ img {
 #restaurants-list li {
   padding-top: 20px;
   padding-bottom: 20px;
+  /*width: 100%;*/
 }
 #restaurants-list li a {
   padding: 10px;
@@ -457,13 +458,26 @@ a {
     position: relative;
   }
 }
+/* implement responsiveness for tablet viewport*/
+@media screen and (max-width: 772px) {
+
+  #restaurants-list li {
+    width: 100%;
+  }
+}
+/*@media screen and (min-width: 774px) and (max-width: 1249px) {
+
+  #restaurants-list li {
+    width: 100%;
+  }
+}*/
 /* implement responsiveness for largest viewport*/
-@media  screen and (min-width: 850px) {
+@media  screen and (min-width: 1250px) {
   body,
   .inside header,
   .inside header ul,
   .inside #footer {
-    width: 850px;
+    width: 1130px;
     margin-left: auto;
     margin-right: auto;
   }
