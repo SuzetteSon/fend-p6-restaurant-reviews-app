@@ -273,7 +273,9 @@ nav h1 a {
   overflow: hidden;
   /*padding: 0 20px 20px;*/
   position: relative;
-  width: 85%;
+}
+#list-item {
+  width: 270px;
 }
 #reviews-list li p {
   margin: 0 0 10px;
@@ -346,7 +348,8 @@ nav h1 a {
 
 #maincontent,
 #map,
-#restaurants-list {
+#restaurants-list,
+#reviews-list {
   display: flex;
   flex-wrap: wrap;
 }
@@ -449,13 +452,12 @@ a {
   #list-item-rating {
     width: 40%;
   }
-  #reviews-list li {
-    width: 100%;
-  }
   #list-item-comments {
     padding: 20px;
   }
-
+  #list-item {
+    width: 100%;
+  }
   .inside #maincontent {
     width: 100%;
   }
@@ -478,11 +480,27 @@ a {
   }
 }
 /* implement responsiveness for tablet viewport*/
-@media screen and (max-width: 772px) {
+@media screen and (max-width: 767px) {
 
   #restaurants-list li {
     width: 100%;
   }
+  #reviews-list li {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+
+  #list-item {
+    width: 100%;
+  }
+  #list-item-rating {
+    width: 15%;
+  }
+  nav h1 {
+    padding-top: 50px;
+  }
+
 }
 /*@media screen and (min-width: 774px) and (max-width: 1249px) {
 
