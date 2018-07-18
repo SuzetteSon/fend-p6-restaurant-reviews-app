@@ -312,6 +312,8 @@ nav h1 a {
   text-transform: uppercase;
   color: white;
   letter-spacing: 2px;
+  text-align: center;
+  width: 100px;
 }
 
 /* ====================== Home page restaurant list styling ====================== */
@@ -449,9 +451,7 @@ a {
   #reviews-list li div p {
     padding: 15px 0px 0px 30px;
   }
-  #list-item-rating {
-    width: 40%;
-  }
+
   #list-item-comments {
     padding: 20px;
   }
@@ -494,9 +494,7 @@ a {
   #list-item {
     width: 100%;
   }
-  #list-item-rating {
-    width: 15%;
-  }
+
   nav h1 {
     padding-top: 50px;
   }
@@ -518,3 +516,9 @@ a {
     margin-left: auto;
     margin-right: auto;
   }
+
+}
+
+
+
+
