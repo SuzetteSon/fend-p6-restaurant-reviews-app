@@ -45,7 +45,8 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   color: #aaa;
   font-size: 8pt;
   letter-spacing: 1px;
-  padding: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -109,20 +110,20 @@ nav h1 a {
   background-color: #ccc;
 }
 /* ====================== Restaurant Filtering ====================== */
-.filter-options {
+#filter-options {
   width: 100%;
-  height: 50px;
+  /*height: 50px;*/
   background-color: #3397DB;
   align-items: center;
 }
-.filter-options h2 {
+#filter-options h2 {
   color: white;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1;
   margin: 0 20px;
 }
-.filter-options select {
+#filter-options select {
   background-color: white;
   border: 1px solid #fff;
   font-family: Arial,sans-serif;
@@ -157,8 +158,7 @@ nav h1 a {
   display: block;
   margin: 0;
   max-width: 100%;
-  min-height: 248px;
-  min-width: 100%;
+
 }
 #restaurants-list li h1 {
   color: #f18200;
@@ -312,6 +312,26 @@ nav h1 a {
 #list-item p {
   padding: 30px;
 }
+/* ====================== Home page restaurant list styling ====================== */
+
+#restaurant-list-item {
+
+}
+
+/* ====================== Filter Results styling ====================== */
+
+#filter-options h2 {
+
+    /*color: black;
+    font-size: 12pt;
+    margin: 0 0 20px;
+    
+    text-align: center;
+    text-transform: uppercase;
+    width: 90%;*/
+
+    padding-top: 20px;
+}
 
 /* ====================== Footer styling ====================== */
 
@@ -324,27 +344,75 @@ nav h1 a {
 
 /* ====================== Responsiveness ====================== */
 
-#maincontent{
+#maincontent,
+#map,
+#restaurants-list {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
 }
 /* to make images responsive */
 img {
   max-width: 100%;
 }
+#retaurants-list .restaurant-image {
+  max-height: 200px;
+}
+#restaurants-list li {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#restaurants-list li a {
+  padding: 10px;
+  min-height: 20px;
+}
+
 /* touch targets */
 a {
   min-width: 48px;
   min-height: 48px;
 }
-
+/* implement responsiveness for smallest viewport*/
 @media screen and (min-width: 320px) {
+
+  /* implement responsiveness for map home page */
+
+  #map-container {
+    width: 100%;
+    order: 0;
+    height: 400px;
+    position: relative;
+  }
+
+  /*implement responsiveness for filter box*/
+
+  #filter-options-box {
+    width: 100%;
+  }
+  #filter-options {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 14pt;
+    font-weight: 200;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+  }
+  #filter-options h2 {
+    padding-bottom: 10px;
+  }
+  /* implement home page responsiveness */
+  .inside 
+  #restaurant-list-item {
+    width: 100%;
+  }
+  /* implement nav responsiveness */
+
   nav h1 a {
-    font-size: 34px;
+    font-size: 24px;
   }
   nav h1 {
-    padding: 30px;
+    padding-top: 30px;
   }
   nav {
     height: 130px;
@@ -355,7 +423,9 @@ a {
     padding: 0;
     margin: 0;
     line-height: 24px;
-    padding: 24px;
+    /*padding: 24px;*/
+    padding-top: 24px;
+    padding-bottom: 24px;
 
   }
   #breadcrumb_item {
@@ -372,7 +442,7 @@ a {
     order: 0;
     height: 400px;
     top: 210px;    
-    position: absolute;
+    
   }
   .inside #restaurant-container {
     width: 100%;
@@ -387,7 +457,7 @@ a {
     position: relative;
   }
 }
-
+/* implement responsiveness for largest viewport*/
 @media  screen and (min-width: 850px) {
   body,
   .inside header,
