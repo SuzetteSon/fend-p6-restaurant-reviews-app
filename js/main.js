@@ -218,6 +218,25 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 } */
 
-// implement focus
+// offline mode
 
-document
+
+/*self.addEventListener('install', function(event) {
+  var urlsToCache = [
+        '/',
+       'css/styles.css',
+       'data/restaurants.json',
+       'restaurant.html',
+       'js/main.js'
+  ];
+
+  event.waitUntil(
+    caches.open('static-v1').then(function(cache) {
+      return cache.addAll(urlsToCache);
+    })
+  );
+});
+
+self.addEventListener('fetch', function(event) {
+
+})*/
