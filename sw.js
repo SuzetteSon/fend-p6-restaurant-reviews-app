@@ -1,3 +1,4 @@
+
 self.addEventListener('install', function (event) {
   event.waitUntil(
     caches.open("rest-static-v1").then(function (cache) {
