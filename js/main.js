@@ -163,6 +163,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+
   li.append(image);
 
   const name = document.createElement('h1');
@@ -180,7 +181,11 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
+  more.setAttribute("tabindex", restaurant.id);
   li.append(more)
+
+  //add alt attribute to images
+  image.setAttribute("alt", "Photo of " + restaurant.name);
 
   return li
 }
@@ -211,3 +216,6 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 } */
 
+// implement focus
+
+document
