@@ -326,15 +326,12 @@ nav h1 a {
 
 #filter-options h2 {
 
-    /*color: black;
-    font-size: 12pt;
-    margin: 0 0 20px;
-    
-    text-align: center;
-    text-transform: uppercase;
-    width: 90%;*/
-
     padding-top: 20px;
+}
+
+#filter-options label {
+  padding-left: 20px;
+  text-align: center;
 }
 
 /* ====================== Footer styling ====================== */
@@ -351,7 +348,8 @@ nav h1 a {
 #maincontent,
 #map,
 #restaurants-list,
-#reviews-list {
+#reviews-list,
+#filter-options {
   display: flex;
   flex-wrap: wrap;
 }
@@ -379,6 +377,16 @@ a {
 }
 /* implement responsiveness for smallest viewport*/
 @media screen and (min-width: 320px) {
+
+  /* responsiveness filter results */
+
+  #filter-options label {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+  #filter-options h2 {
+    text-align: center;
+  }
 
   /* implement responsiveness for map home page */
 

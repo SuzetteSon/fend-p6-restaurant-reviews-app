@@ -182,6 +182,8 @@ createRestaurantHTML = (restaurant) => {
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
   more.setAttribute("tabindex", restaurant.id);
+  //set attribute for 
+  more.setAttribute("for", "view details for " + restaurant.name);
   li.append(more)
 
   //add alt attribute to images
