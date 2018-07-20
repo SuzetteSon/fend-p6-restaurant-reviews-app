@@ -67,6 +67,8 @@ fetchRestaurantFromURL = (callback) => {
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
+  //add tab index to restaurant name
+  name.setAttribute('tabindex', '0');
 
   const address = document.getElementById('restaurant-address');
   address.innerHTML = restaurant.address;
@@ -77,6 +79,8 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
   //add alt attribute to images
   image.setAttribute("alt", "Photo of " + restaurant.name);
+  //add tab index to restaurant image
+  image.setAttribute('tabindex', '0');
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
@@ -107,6 +111,8 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 
     hours.appendChild(row);
   }
+  //add tab index to hours
+  document.getElementById('restaurant-hours').setAttribute('tabindex', '0');
 }
 
 /**
@@ -114,8 +120,10 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
-  const title = document.createElement('h2');
+  const title = document.createElement('h3');
   title.innerHTML = 'Reviews';
+  //add tab index to reviews
+  title.setAttribute('tabindex', '0');
   container.appendChild(title);
 
   if (!reviews) {
@@ -138,6 +146,8 @@ createReviewHTML = (review) => {
   const li = document.createElement('li');
   // set id attribute to list item
   li.setAttribute("id", "list-item");
+  //add tab index to reviews
+  li.setAttribute('tabindex', '0');
   //create new div container for name and date
   const nameAndDateBox = document.createElement('div');
   //set id element of container box
